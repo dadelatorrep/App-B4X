@@ -1,0 +1,137 @@
+﻿Build1=Default,b4a.example
+File1=blacksmith.png
+File10=Menu_Arma_Read.bal
+File11=Menu_Arma_Update.bal
+File12=Menu_General.bal
+File13=Menu_TipoArma.bal
+File14=Menu_TipoArma_Create.bal
+File15=Menu_TipoArma_Delete.bal
+File16=Menu_TipoArma_Read.bal
+File17=Menu_TipoArma_Update.bal
+File18=swords.png
+File19=swords_shield.png
+File2=book.png
+File3=delete.png
+File4=edit.png
+File5=login.png
+File6=MainPage.bal
+File7=Menu_Arma.bal
+File8=Menu_Arma_Create.bal
+File9=Menu_Arma_Delete.bal
+FileGroup1=Assets
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup13=Default Group
+FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Assets
+FileGroup19=Assets
+FileGroup2=Assets
+FileGroup3=Assets
+FileGroup4=Assets
+FileGroup5=Assets
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=b4xpages
+Library2=core
+Library3=json
+Library4=okhttputils2
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=Arma
+Module10=Starter
+Module11=TipoArma
+Module12=|relative|..\TipoArma_Menu
+Module13=|relative|..\TipoArma_Menu_Create
+Module14=|relative|..\TipoArma_Menu_Delete
+Module15=|relative|..\TipoArma_Menu_Read
+Module16=|relative|..\TipoArma_Menu_Update
+Module17=TipoArmaService
+Module18=Usuario
+Module19=UsuarioService
+Module2=|relative|..\Arma_Menu
+Module3=|relative|..\Arma_Menu_Create
+Module4=|relative|..\Arma_Menu_Delete
+Module5=|relative|..\Arma_Menu_Read
+Module6=|relative|..\Arma_Menu_Update
+Module7=ArmaService
+Module8=|relative|..\B4XMainPage
+Module9=|relative|..\Menu_General
+NumberOfFiles=19
+NumberOfLibraries=4
+NumberOfModules=19
+Version=12.8
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: B4A Example
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+'#BridgeLogger: True
+
+Sub Process_Globals
+	Public ActionBarHomeClicked As Boolean
+End Sub
+
+Sub Globals
+
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Dim pm As B4XPagesManager
+	pm.Initialize(Activity)
+End Sub
+
+'Template version: B4A-1.01
+#Region Delegates
+
+Sub Activity_ActionBarHomeClick
+	ActionBarHomeClicked = True
+	B4XPages.Delegate.Activity_ActionBarHomeClick
+	ActionBarHomeClicked = False
+End Sub
+
+Sub Activity_KeyPress (KeyCode As Int) As Boolean
+	Return B4XPages.Delegate.Activity_KeyPress(KeyCode)
+End Sub
+
+Sub Activity_Resume
+	B4XPages.Delegate.Activity_Resume
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+	B4XPages.Delegate.Activity_Pause
+End Sub
+
+Sub Activity_PermissionResult (Permission As String, Result As Boolean)
+	B4XPages.Delegate.Activity_PermissionResult(Permission, Result)
+End Sub
+
+Sub Create_Menu (Menu As Object)
+	B4XPages.Delegate.Create_Menu(Menu)
+End Sub
+
+#if Java
+public boolean _onCreateOptionsMenu(android.view.Menu menu) {
+	 processBA.raiseEvent(null, "create_menu", menu);
+	 return true;
+	
+}
+#End If
+#End Region
+
+'Program code should go into B4XMainPage and other pages.
